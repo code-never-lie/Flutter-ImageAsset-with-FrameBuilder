@@ -33,21 +33,20 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: new Text("Home Page"),
-      ),
-      body: Image.asset('asset/flag.jpg', height: 200, frameBuilder:
-          (BuildContext context, Widget child, _, bool wasSynchronouslyLoaded) {
-        return Container(
-          padding: const EdgeInsets.all(100.0),
-          height: 500,
-          child: child,
-          decoration: BoxDecoration(
+        appBar: AppBar(
+          title: new Text("Home Page"),
+        ),
+        body: Container(
             color: Colors.red,
-            shape: BoxShape.circle,
-          ),
-        );
-      }),
-    );
+            height: double.infinity,
+            width: double.infinity,
+            // alignment: Alignment.bottomCenter,
+            child: Image.asset(
+              'asset/flag.jpg',
+              height: 100,
+              fit: BoxFit.scaleDown,
+              // alignment: Alignment.center,
+              repeat: ImageRepeat.repeat,
+            )));
   }
 }
